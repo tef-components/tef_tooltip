@@ -1,0 +1,68 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/core-style/core-style.html">
+<link rel="import" href="tef_button_styles.html">
+
+<polymer-element name="tef-button" attributes ="href block size type disabled toggle active" on-click="{{onClick}}">
+    <template>
+        <core-style ref="tef-button"></core-style>
+        <a href="{{href}}" class="{{resolveClass(size,type,disabled,active)}}">
+            <content></content>
+        </a>
+    </template>
+    <script>
+        Polymer({
+            publish: {
+                active: {
+                    value: false,
+                    reflect: true
+                },
+                block: {
+                    value: false,
+                    reflect: true
+                },
+                disabled: {
+                    value: false,
+                    reflect: true
+                },
+                href: {
+                    value: "javascript:void(0)",
+                    reflect: false
+                },
+                toggle: {
+                    value: false,
+                    reflect: true
+                }
+            },
+
+            onClick: function() {
+                if (!this.disabled) {
+                    if (this.toggle) {
+                        this.active = !this.active;
+                        if (this.active) {
+                            this.fire('toggle-on');
+                        } else {
+                            this.fire('toggle-off');
+                        }
+                    } else {
+                        this.fire('clicked');
+                    }
+                }
+            },
+
+            resolveClass: function(e) {
+                var localClass = 'tef-button';
+                if (this.size) localClass += ' ' + this.size;
+                if (this.type) localClass += ' ' + this.type;
+                if (this.disabled) {
+                    localClass += ' disabled';
+                } else {
+                    if (this.toggle && this.active)
+                        localClass += ' active';
+                }
+                if (this.block) localClass += ' block';
+                return localClass;
+            }
+
+        });
+    </script>
+</polymer-element>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>tef-header demo</title>
+    <meta name="viewport" content="width=device-width">
+    <link id="themeFile" rel="stylesheet" href="../theme_telefonica/css/components.telefonica.css">
+    <link id="themeFile2" rel="stylesheet" href="">
+    <script id="themeVars" src="../theme_telefonica/theme.telefonica.js"></script>
+    <link rel="import" href="tef_tooltip.html">
+    <link rel="import" href="../tef_button/tef_button.html">
+
+
+    <!-- Web Components polyfill -->
+    <script>
+      if ('registerElement' in document
+        && 'createShadowRoot' in HTMLElement.prototype
+        && 'import' in document.createElement('link')
+        && 'content' in document.createElement('template')) {
+      } else {
+        document.write('<script src="../webcomponentsjs/webcomponents.min.js"><\/script>');
+      }
+    </script>
+
+
+    <style>
+      header[columns] { padding-top: 30px; }
+      h1 { margin-top: 0; }
+      header > div { padding-top: 2px; }
+      code {
+        display: block;
+        overflow: hidden;
+      }
+      style {
+        display: block;
+        white-space: pre;
+        color: #0086B3;
+        border: 1px solid #cfcece;
+        background: #f2f2f2;
+        margin: 20px 0;
+        line-height: 25px;
+        overflow-y: auto;
+        border-radius: 4px;
+      }
+      .demo {
+        padding: 55px 0;
+      }
+      .demo tef-button {
+        padding: 20px 10px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="tef-wrapper tef-content">
+      <header columns="2 xs1">
+        <h1>tef-header</h1>
+        <div>
+          <label>Change theme</label>
+          <div class="tef-dropdown" icon="angle_down">
+            <select id="themeSelector">
+              <option value="telefonica">Telefónica</option>
+              <option value="movistar">Movistar</option>
+              <option value="o2">O2</option>
+              <option value="vivo">Vivo</option>
+            </select>
+          </div>
+        </div>
+      </header>
+<h2>Default position</h2>
+      <p>The element tef-tooltip needs to contain the elements that will show a tooltip when hovering them.</p>
+      <p>For a short tooltip, use the <b>tooltip</b> attribute.</p>
+      <p>The attribute <b>position</b> will set the position of the tooltip. The default value is top.</p>
+      <h3>Top</h3>
+      <div class="tef-center">
+        <tef-tooltip tooltip="Tooltip top">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+      </div>      
+      <code>
+        <style>
+        <tef-tooltip tooltip="Tooltip top">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+        </style>
+      </code>
+
+      <h3>Right</h3>
+      <div class="tef-center">
+        <tef-tooltip tooltip="Tooltip right" position="right">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+      </div>
+      <code>
+        <style>
+        <tef-tooltip tooltip="Tooltip right" position="right">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+        </style>
+      </code>
+
+      <h3>Bottom</h3>
+      <div class="tef-center">
+        <tef-tooltip tooltip="Tooltip bottom" position="bottom">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+      </div>
+      <code>
+        <style>
+        <tef-tooltip tooltip="Tooltip bottom" position="bottom">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+        </style>
+      </code>
+
+      <h3>Left</h3>
+      <div class="tef-center">
+        <tef-tooltip tooltip="Tooltip left" position="left">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+      </div>
+      <code>
+        <style>
+        <tef-tooltip tooltip="Tooltip left" position="left">
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+        </style>
+      </code>
+
+       <h2>Visible</h2>
+      <p>Setting the <b>active</b> attribute will make the tooltip visible. If you remove it it will dissapear.</p>
+      <div class="tef-center">
+        <tef-tooltip tooltip="Tooltip right" position="right" active>
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+      </div>
+      <code>
+        <style>
+        <tef-tooltip tooltip="Tooltip right" position="right" active>
+          <tef-button>Roll over me!</tef-button>
+        </tef-tooltip>
+        </style>
+      </code>
+
+      <h2>HTML content</h2>
+      <p>If you want to include HTML markup instead a simple tooltip, insert all that html in the <b>&lt;tooltip&gt;</b> tag.</p>
+      <div class="tef-center">
+        <tef-tooltip>
+          <tef-button>Roll over me!</tef-button>
+          <tooltip>
+            <h2>Hi there!</h2>
+            <p>This is an <strong>HTML</strong> tooltip</p>
+          </tooltip>
+        </tef-tooltip>
+      </div>
+      <code>
+        <style>
+        <tef-tooltip>
+          <tef-button>Roll over me!</tef-button>
+          <tooltip>
+            <h2>Hi there!</h2>
+            <p>This is an <strong>HTML</strong> tooltip</p>
+          </tooltip>
+        </tef-tooltip>
+        </style>
+      </code>
+
+      <h2>All possible positions</h2>
+      <p>By default tooltips are centered to the target element. Use the <b>position</b> attribute to get the desired position.</p>
+      <div class="tef-center demo">
+        <tef-tooltip active position="left" tooltip="left">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="top" tooltip="top">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="bottom" tooltip="bottom">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="right" tooltip="right">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+      <div class="tef-center demo">
+        <tef-tooltip active position="start left" tooltip="left start">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="start top" tooltip="top start">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="start bottom" tooltip="bottom start">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="start right" tooltip="right start">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+      <div class="tef-center demo">
+        <tef-tooltip active position="end left" tooltip="left end">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="end top" tooltip="top end">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="end bottom" tooltip="bottom end">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="end right" tooltip="right end">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+      <div class="tef-center demo">
+        <tef-tooltip active position="reverse left" tooltip="left reverse">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse top" tooltip="top reverse">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse bottom" tooltip="bottom reverse">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse right" tooltip="right reverse">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+      <div class="tef-center demo">
+        <tef-tooltip active position="reverse left start" tooltip="left reverse start">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse top start" tooltip="top reverse start">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse bottom start" tooltip="bottom reverse start">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse right start" tooltip="right reverse start">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+      <div class="tef-center demo">
+        <tef-tooltip active position="reverse left end" tooltip="left reverse end">
+          <button class="tef-button">Button 1</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse top end" tooltip="top reverse end">
+          <button class="tef-button positive">Button 2</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse bottom end" tooltip="bottom reverse end">
+          <button class="tef-button negative">Button 3</button>
+        </tef-tooltip>
+        <tef-tooltip active position="reverse right end" tooltip="right reverse end">
+          <button class="tef-button significant">Button 4</button>
+        </tef-tooltip>
+      </div>
+    </div>
+
+    <script>
+      var theme = document.getElementById('themeSelector');
+      theme.addEventListener('change', function() {
+        var link = document.getElementById('themeFile');
+        link.href = '../theme_'
+          + theme.value + '/css/components.'
+          + theme.value + '.css';
+
+          document.head.removeChild(document.getElementById("themeVars"));
+          var linkVars = document.createElement('script');
+          linkVars.id = "themeVars";
+
+          linkVars.src = '../theme_'
+            + theme.value + '/theme.'
+            + theme.value + '.js';
+
+          document.head.appendChild(linkVars);
+          if (theme.value != "telefonica"){
+            document.getElementById("themeFile2").href = "overrides/"+theme.value+".overrides.css";
+          }else{
+            document.getElementById("themeFile2").href = "";
+          }
+      });
+    </script>
+  </body>
+</html>

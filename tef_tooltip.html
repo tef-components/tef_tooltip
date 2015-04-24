@@ -1,0 +1,32 @@
+<link rel="import" href="tef_tooltip_styles.html">
+<link rel="import" href="../core-style/core-style.html">
+<link rel="import" href="../polymer/polymer.html"> 
+
+<polymer-element name="tef-tooltip" attributes="position tooltip active">
+    <template>    	
+		<core-style ref="tef-tooltip"></core-style>
+		<div id="main" class="{{resolveClass(position, active)}}">
+			<template if="{{!tooltip}}">		 	
+			 	<div class = "tef-tooltip-content">
+			 		<content select="tooltip"></content>
+				</div>
+			</template>
+			<content></content>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			position: "top",
+			tooltip: "",
+			active: false,
+			resolveClass: function(e){
+				var localClass = "tef-tooltip " + this.position;
+				if (this.active) localClass += " active";
+				return localClass;
+			},
+			tooltipChanged: function (){
+				this.$.main.setAttribute("tooltip", this.tooltip);
+			}
+		});			
+	</script>	
+</polymer-element>

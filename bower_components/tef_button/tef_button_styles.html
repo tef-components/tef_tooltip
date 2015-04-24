@@ -1,0 +1,156 @@
+<core-style id="tef-button">
+  :host button::-moz-focus-inner {
+    border: none;
+    outline: none;
+  }
+  :host .tef-button {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 35px;
+    background-image: none;
+    background-color: {{g.color}};
+    color: {{g.text}};
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid {{g.border}};
+    border-radius: {{g.radius}};
+    padding: 8px 9px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    touch-action: manipulation;
+    box-sizing: border-box;
+    text-transform: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :host .tef-button:hover,
+  :host .tef-button:focus {
+    color: {{g.textHover}};
+    background-color: {{g.colorHover}};
+    border-color: {{g.borderHover}};
+    outline: none;
+  }
+  :host .tef-button:active,
+  :host .tef-button.active {
+    color: {{g.textActive}};
+    background-color: {{g.colorActive}};
+    border-color: {{g.borderActive}};
+  }
+  :host .tef-button [icon]:before {
+    position: relative;
+    font-size: 23px;
+    line-height: 0;
+    top: 4px;
+  }
+  :host .tef-button [icon] + span,
+  :host .tef-button span + [icon] {
+    margin-left: 5px;
+  }
+  :host .tef-button span {
+    font-size: 15px;
+  }
+  :host .tef-button.small {
+    font-size: 11px;
+    line-height: 13px;
+    padding: 6px 9px;
+  }
+  :host .tef-button.small [icon]:before {
+    font-size: 18px;
+    top: 3px;
+  }
+  :host .tef-button.small span {
+    font-size: 11px;
+  }
+  :host .tef-button.large {
+    font-size: 24px;
+    line-height: 29px;
+    padding: 7px 14px;
+  }
+  :host .tef-button.large [icon]:before {
+    font-size: 32px;
+    top: 5px;
+  }
+  :host .tef-button.large span {
+    font-size: 24px;
+  }
+  :host .tef-button.positive {
+    background-color: {{g.positive}};
+    color: {{g.positiveText}};
+    border-color: {{g.positiveBorder}};
+  }
+  :host .tef-button.positive:hover,
+  :host .tef-button.positive:focus {
+    background-color: {{g.positiveHover}};
+    color: {{g.positiveTextHover}};
+    border-color: {{g.positiveBorderHover}};
+  }
+  :host .tef-button.positive:active,
+  :host .tef-button.positive.active {
+    background-color: {{g.positiveActive}};
+    color: {{g.positiveTextActive}};
+    border-color: {{g.positiveBorderActive}};
+  }
+  :host .tef-button.negative {
+    background-color: {{g.negative}};
+    color: {{g.negativeText}};
+    border-color: {{g.negativeBorder}};
+  }
+  :host .tef-button.negative:hover,
+  :host .tef-button.negative:focus {
+    background-color: {{g.negativeHover}};
+    color: {{g.negativeTextHover}};
+    border-color: {{g.negativeBorderHover}};
+  }
+  :host .tef-button.negative:active,
+  :host .tef-button.negative.active {
+    background-color: {{g.negativeActive}};
+    color: {{g.negativeTextActive}};
+    border-color: {{g.negativeBorderActive}};
+  }
+  :host .tef-button.subdued {
+    background-color: {{g.subdued}};
+    color: {{g.subduedText}};
+    border-color: {{g.subduedBorder}};
+  }
+  :host .tef-button.subdued:hover,
+  :host .tef-button.subdued:focus {
+    background-color: {{g.subduedHover}};
+    color: {{g.subduedTextHover}};
+    border-color: {{g.subduedBorderHover}};
+  }
+  :host .tef-button.subdued:active,
+  :host .tef-button.subdued.active {
+    background-color: {{g.subduedActive}};
+    color: {{g.subduedTextActive}};
+    border-color: {{g.subduedBorderActive}};
+  }
+  :host .tef-button.significant {
+    background-color: {{g.significant}};
+    color: {{g.significantText}};
+    border-color: {{g.significantBorder}};
+  }
+  :host .tef-button.significant:hover,
+  :host .tef-button.significant:focus {
+    background-color: {{g.significantHover}};
+    color: {{g.significantTextHover}};
+    border-color: {{g.significantBorderHover}};
+  }
+  :host .tef-button.significant:active,
+  :host .tef-button.significant.active {
+    background-color: {{g.significantActive}};
+    color: {{g.significantTextActive}};
+    border-color: {{g.significantBorderActive}};
+  }
+  :host .tef-button.block {
+    display: block;
+    width: 100%;
+  }
+  :host .tef-button + .tef-button {
+    margin-left: 6px;
+  }
+
+</core-style>
