@@ -1,0 +1,26 @@
+{
+  "name": "tef_button",
+  "version": "0.2.15",
+  "homepage": "https://github.com/tef-components/tef_button",
+  "authors": [
+    "the TEF components team"
+  ],
+  "description": "TEF components - tef-button web component",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "bower.json",
+    ".gitignore",
+    "README.md",
+    "Gruntfile.js",
+    "package.json",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.5",
+    "buttons": "tef-components/buttons#master",
+    "webcomponentsjs": "^0.5.5",
+    "core-style": "Polymer/core-style#^0.5.5"
+  }
+}
