@@ -11,21 +11,23 @@ module.exports = function(grunt) {
         }
       }
     },
-    concat: {
-      default: {
-       src: [
-          'templates/tef.tooltip.css',          
-          '../icons/fonts/icons.css'
-        ],
-        dest: 'templates/tef.tooltip.css'
-      }
-    },
+
 
     includes: {
       files: {
         cwd: 'templates/',
         src: '**/*.html',
         dest: ''
+      }
+    },
+    replace: {
+      firstReplacement: {      
+        src: ['tef_tooltip_styles.html'],
+        overwrite: true,
+        replacements: [{
+          from: '.tef-tooltip-content',
+          to: '.tef-tooltip-content ::content tooltip'
+        }]
       }
     },
 
@@ -79,15 +81,15 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', [
-    'less',
-    'concat',
-    'includes'    
+    'less',    
+    'includes',
+    'replace'    
   ]);
 
   grunt.registerTask('release', [
-    'less',
-    'concat',
-    'includes',    
+    'less',    
+    'includes',
+    'replace',     
     'exec:add',
     'prompt',
     'exec:message',
